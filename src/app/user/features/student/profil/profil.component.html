@@ -1,0 +1,42 @@
+<div (scroll)="onScroll($event)">
+    <!--All image-->
+    <div class="images">
+        <div class="cover-picture">
+            <img [src]="coverUrl">
+            <input type="file" id="cover-picture-input" (change)="onchangeCoverPicture($event)">
+            <label for="cover-picture-input">
+                <fa-icon [icon]="camera" class="text-[42px]"></fa-icon>
+                <span>Choose picture</span>
+            </label>
+        </div>
+        <div class="profil-picture">
+            <div class="profil-picture-content">
+                <img [src]="profilUrl">
+                <input type="file" id="profil-picture-input" (change)="onchangeProfilPicture($event)">
+                <label for="profil-picture-input">
+                    <fa-icon [icon]="camera" class="text-[42px]"></fa-icon>
+                    <span>Choose picture</span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-[5rem]">
+
+        <div class="w-full flex flex-between border border-slate-600 text-center">
+            <a [routerLink]="['/profil','personnalinfo']" routerLinkActive="active" class="w-full"> 
+                Personnal Information
+            </a>
+            <a [routerLink]="['/profil','media']" routerLinkActive="active" class="w-full"> 
+                My imported picture
+            </a>
+            <a [routerLink]="['/profil','academic_career']" routerLinkActive="active" class="w-full"> 
+                University
+            </a>
+        </div>
+        <!--Update information-->
+        <div class="profil-information space-y-4">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

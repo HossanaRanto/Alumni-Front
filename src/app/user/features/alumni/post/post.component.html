@@ -1,0 +1,45 @@
+<div class="w-full h-full bg-black/70 absolute top-0">
+    <div  class="w-full h-full relative">
+        <div class="right-0 absolute p-5">
+            <button class="bg-slate-500/30 text-white w-[3rem] h-[3rem] rounded-[50%] text-[15px]" (click)="closeCreate()">
+                <fa-icon [icon]="close"></fa-icon>
+            </button>
+        </div>
+        <div class="w-full h-full flex justify-center items-center">
+            <form class="w-[50%] h-[50%] min-h-[30rem] rounded-xl bg-slate-900 shadow flex flex-col justify-between" [formGroup]="content_group" (submit)="sendPost($event)">
+                <div class="h-[50%] w-[100%] relative flex flex-col justify-arround">
+                    <img class="w-full h-full object-cover object-top rounded-t-xl" [src]="imageUrl"
+                     >
+                    <div class="absolute bottom-0 right-0 p-5">
+                        <input accept="image/*" type="file" id="post-picture" style="display:none" (change)="changeImage($event)" #input>
+                        <label for="post-picture" class="bg-blue-600 w-[5rem] cursor-pointer h-[5rem] rounded-[50%] p-3 text-[20px]">
+                            <fa-icon [icon]="faCam"></fa-icon>
+                        </label>
+                    </div>                   
+                </div>
+                <div class="p-3 h-full flex flex-col justify-between gap-2">
+                    <textarea placeholder="Content" class="
+                        bg-transparent 
+                        border-gray-600 
+                        shadow 
+                        appearance-none 
+                        border 
+                        rounded 
+                        w-full 
+                        h-full
+                        py-2 px-3 
+                        text-gray-700 
+                        leading-tight 
+                        focus:outline-none 
+                        focus:shadow-outline 
+                        focus:bg-transparent"
+                        formControlName="content"></textarea>
+                    <button class="gradiant-button w-full space-x-2" type="submit">
+                        <fa-icon [icon]="save"></fa-icon>
+                        <span>Save</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

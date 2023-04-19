@@ -1,0 +1,158 @@
+<div class="w-full register-form">
+    <div class=" w-[75%]">
+      <form class="bg-[#1E293B] shadow-md rounded px-8 pt-6 pb-8 mb-4" [formGroup]="form_data" (submit)="register($event)">
+        <div class="flex flex-wrap w-full">
+            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                      Username
+                    </label>
+                    <input class="bg-transparent border-gray-600 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:bg-transparent"
+                     id="username" type="text" placeholder="Username"
+                     formControlName="username">
+                     <label *ngIf="form_data.get('username')?.hasError('userExist')" 
+                     class="text-red-500 text-xs italic">Change your username</label>
+                     <label *ngIf="form_data.get('username')?.hasError('required')" 
+                     class="text-red-500 text-xs italic">Username required</label>
+                  </div>
+                  <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">
+                      Password
+                    </label>
+                    <input class="bg-transparent shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline focus:bg-transparent" type="password" placeholder="******************"
+                    formControlName="password">
+                    <p class="text-red-500 text-xs italic">Please choose a password.</p>
+                  </div>
+                  <div class="mb-6">
+                      <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                        Confirm Password
+                      </label>
+                      <input class="bg-transparent shadow  appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline focus:bg-transparent" type="password" placeholder="******************"
+                      formControlName="confirmpassword">
+                      
+                      <p class="text-red-500 text-xs italic">Please choose a password.</p>
+                  </div>
+                  <div class="mb-6">
+                      <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                          Email address
+                      </label>
+                      <input class="bg-transparent shadow border-gray-600 appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline focus:bg-transparent" type="email"
+                      placeholder="Email"
+                      formControlName="email">
+                      <label *ngIf="form_data.get('email')?.hasError('required')" 
+                      class="text-red-500 text-xs italic">Email required</label>
+                      <label *ngIf="form_data.get('email')?.hasError('emailExist')" 
+                      class="text-red-500 text-xs italic">Email already used by another user</label>
+                  </div>
+                  <div class="mb-6">
+                      <label class="block text-gray-700 text-sm font-bold mb-2">
+                          First name
+                      </label>
+                      <input class="bg-transparent shadow border-gray-600 appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline focus:bg-transparent" type="text"
+                      placeholder="First name"
+                      formControlName="firstname">
+                      <label *ngIf="form_data.get('firstname')?.hasError('required')"
+                      class="text-red-500 text-xs italic">First name required</label>
+                  </div>
+                  
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">
+                        Last name
+                    </label>
+                    <input class="bg-transparent border-gray-600 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline focus:bg-transparent" type="text"
+                    placeholder="Last name"
+                    formControlName="lastname">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Gender</label>
+                    <select class="block appearance-none w-full bg-transparent border border-gray-600 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-transparent focus:border-gray-500" id="grid-state"
+                    formControlName="gender"
+                    >
+                        <option [value]="true">Man/Boy</option>
+                        <option [value]="false">Woman/Girl</option>
+                      </select>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Birth Date</label>
+                    <input class="bg-transparent border-gray-600 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:bg-transparent"
+                    type="date" placeholder="Birth date"
+                     formControlName="birthdate">
+                     <label *ngIf="form_data.get('birthdate')?.hasError('underAge')"
+                     class="text-red-500 text-xs italic">You should be over 13 yers old</label>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Phone number</label>
+                    <input class="bg-transparent border-gray-600 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:bg-transparent"
+                    type="tel" placeholder="Phone number" maxlength="15" minlength="7"
+                     formControlName="contact">
+                     <label *ngIf="form_data.get('contact')?.hasError('required')"
+                     class="text-red-500 text-xs italic">Phone number required</label>
+                     <label *ngIf="form_data.get('contact')?.hasError('onlyNumbers')"
+                     class="text-red-500 text-xs italic">A phone number should only contains number</label>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Address</label>
+                    <div class="flex flex-wrap w-full" [formGroup]="address_data">
+                        <div class="w-full md:w-1/2 px-3 mb-6">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Country</label>
+                            <select class=" w-full bg-transparent border border-gray-600 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-transparent focus:border-gray-500"
+                            formControlName="country"
+                            >
+                                <option *ngFor="let country of country_list" [value]="country">{{country}}</option>
+                            </select>
+                            <p class="text-red-500 text-xs italic" *ngIf="address_data.get('country')?.hasError('required')">Select a country</p>
+                        </div>
+                        <div class="w-full md:w-1/2 px-3 mb-6">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">City</label>
+                            <input type="text" class="bg-transparent border-gray-600 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:bg-transparent" placeholder="City"
+                            formControlName="city">
+                            <label *ngIf="address_data.get('city')?.hasError('required')"
+                            class="text-red-500 text-xs italic">City required</label>
+                        </div>
+                        <div class="w-full md:w-1/2 px-3 mb-6">
+                            <label class="block text-gray-700 text-sm font-bold mb-2">Postal Code</label>
+                            <input type="number" class="bg-transparent border-gray-600 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:bg-transparent" placeholder="Postal Code"
+                            formControlName="postalcode">
+                            <label *ngIf="address_data.get('postalcode')?.hasError('required')"
+                            class="text-red-500 text-xs italic">Postal code required</label>
+                            <label *ngIf="address_data.get('postalcode')?.hasError('onlyNumbers')"
+                            class="text-red-500 text-xs italic">Postal code should contains only numbers</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Type Account</label>
+                    <select class="w-full bg-transparent border border-gray-600 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-transparent focus:border-gray-500"
+                    #type
+                    >
+                        <option value="simpleuser">Simple User</option>
+                        <option value="administrator">Administrator</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <button class="
+          bg-blue-500 
+          hover:bg-blue-700 
+          text-white 
+          font-bold py-2 px-4 
+          rounded 
+          focus:outline-none 
+          focus:shadow-outline
+          disabled:cursor-not-allowed" type="submit"
+          >
+            Sign Up
+          </button>
+          <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+            Forgot Password?
+          </a>
+        </div>
+      </form>
+      <p class="text-center text-gray-500 text-xs">
+        &copy;2022 MRH Corp. All rights reserved.
+      </p>
+    </div>
+</div>

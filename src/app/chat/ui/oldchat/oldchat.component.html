@@ -1,0 +1,24 @@
+<a 
+[routerLink]="['/chat',OldMessage?.user?.user?.id]"
+routerLinkActive="old-chat" 
+class="
+rounded-md
+hover:bg-slate-800
+w-full
+h-[5rem]
+p-2
+flex
+gap-2
+items-center"
+>
+    <img src="{{OldMessage?.user?.profilPicture}}" class="
+    w-[3rem] 
+    h-[3rem] 
+    rounded-[50%]
+    object-cover
+    object-top">
+    <div>
+        <h4>{{OldMessage?.user?.user?.username}}</h4>
+        <p class="text-slate-700">{{OldMessage?.lastMessage}}</p>
+    </div>
+</a>

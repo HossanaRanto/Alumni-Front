@@ -1,0 +1,8 @@
+<div class="flex flex-wrap w-full gap-2">
+    <div class="w-[20%] min-w-[10rem] h-[15rem] relative" *ngFor="let image of images;let i=index">
+        <img (load)="onload(i)" src="{{image}}" class="w-full h-full object-cover object-top">
+        <div class="absolute w-full h-full flex justify-center items-center top-0" *ngIf="loader[i]">
+            <app-spinner></app-spinner>
+        </div>
+    </div>
+</div>

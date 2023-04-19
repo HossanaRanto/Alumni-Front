@@ -1,0 +1,33 @@
+<div>
+    <!--All image-->
+    <div class="images">
+        <div class="cover-picture">
+            <img src="{{user?.profilPicture}}">
+        </div>
+        <div class="profil-picture">
+            <div class="profil-picture-content">
+                <img src="{{user?.profilPicture}}">
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-[5rem]">
+
+        <div class="w-full flex flex-between border border-slate-600 text-center">
+            <a [routerLink]="['/user',user?.user?.id,'personnalinfo']" routerLinkActive="active" class="w-full"> 
+                Personnal Information
+            </a>
+            <a [routerLink]="['/user',user?.user?.id,'media']" routerLinkActive="active" class="w-full"> 
+                Imported picture
+            </a>
+            <a [routerLink]="['/user',user?.user?.id,'academic_career']" routerLinkActive="active" class="w-full"> 
+                Academic career
+            </a>
+        </div>
+        <!--Update information-->
+        <div class="profil-information space-y-4">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+

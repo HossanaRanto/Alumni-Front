@@ -1,0 +1,26 @@
+<!-- <div class="min-h-[13rem] bg-[#2B3545] p-3 flex flex-col justify-between">
+    <img class="rounded-3xl h-[75%] object-cover object-center" [src]="request.user.image">
+    <div>
+        <h3 class="text-white font-bold">{{request.user.firstname}} {{request.user.lastname}}</h3>
+        <h4 class="text-white">{{request.created_at}}</h4>
+    </div>
+    <div class="flex flex-col gap-1">
+        <button class="bg-blue-700 rounded-lg text-white w-full p-1">Accepter</button>
+        <button class="bg-slate-400 rounded-lg text-white w-full p-1">Rejeter</button>
+    </div>
+</div> -->
+
+<a [routerLink]="['/user',this.Request?.user?.user?.id!]" class="rounded-xl min-h-[15rem] w-[25%] max-w-[10rem] min-w-[10rem] p-3 flex flex-col justify-between text-center border border-blue-500 gap-2">
+    <div class="w-full flex items-center justify-center">
+        <div class="gradiant-border w-20 h-20 rounded-3xl">
+            <div class="gradiant-div rounded-3xl">
+                <img src="{{Request?.user?.profilPicture!}}" class="w-full h-full rounded-3xl object-cover object-center">
+            </div>
+        </div>
+    </div>
+    <div class="space-y-3 w-full">
+        <h4 class="font-bold mb-2">{{Request?.user?.user?.username!}}</h4>
+        <button class="gradiant-button w-full" (click)="acceptRequest($event)">Accept</button>
+        <button class="gradiant-button w-full" (click)="rejectRequest($event)">Reject</button>
+    </div>
+</a>

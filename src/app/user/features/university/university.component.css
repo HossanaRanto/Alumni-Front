@@ -1,0 +1,15 @@
+.parent{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    /* background-color: red; */
+}
+.university-list{
+    /* background-color: red; */
+    flex: 1;
+    /* height: fit-content; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+}

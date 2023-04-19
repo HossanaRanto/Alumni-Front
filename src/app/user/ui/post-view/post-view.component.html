@@ -1,0 +1,97 @@
+<div class=" 
+min-w-[20rem]
+max-w-[50rem]
+border 
+border-slate-800 
+p-2 
+rounded-xl
+text-white">
+    <div>
+        <a [routerLink]="['/user',this.Post?.post?.publisher?.id]" class="flex items-center gap-3">
+            <img class="
+        w-[3rem] 
+        h-[3rem] 
+        rounded-[50%]
+        object-cover
+        object-center"
+        src="assets/test2.jpg">
+            <h3 class="
+            text-white
+            font-bold">{{this.Post?.post?.publisher?.username}}</h3>
+        </a>
+
+    </div>
+    <div class="flex flex-wrap h-full">
+        <!--Post content section-->
+        <div class="md:w-1/2 h-full text-center">
+            <p>{{this.Post?.post?.content}}</p>
+            <img class="
+                    w-full
+                    h-[23rem]
+                    object-cover
+                    object-center" 
+                    src="{{this.Post?.post?.imagePath}}">
+        </div>
+        <!--Comment section content-->
+        <div class="md:w-1/2 w-full p-2 space-y-2">
+            <div class="h-[25rem] overflow-auto space-x-2">
+                <app-comment *ngFor="let comment of commentaries" [Comment]="comment"></app-comment>
+
+                <!-- <app-comment></app-comment>
+                <app-comment></app-comment>
+                <app-comment></app-comment>
+                <app-comment></app-comment>
+                <app-comment></app-comment>
+                <app-comment></app-comment>
+                <app-comment></app-comment>
+                <app-comment></app-comment>
+                <app-comment></app-comment>
+                <app-comment></app-comment> -->
+            </div>
+
+            <!--Post comment-->
+            <form class="flex gap-2" (submit)="submitComment($event)" [formGroup]="commentGroup">
+                <input type="text" class="
+                bg-transparent 
+                border-gray-600 
+                shadow 
+                appearance-none 
+                border 
+                rounded 
+                w-full 
+                py-2 px-3 
+                text-gray-700 
+                leading-tight 
+                focus:outline-none 
+                focus:shadow-outline 
+                focus:bg-transparent"
+                formControlName="comment">
+                <button type="submit" class="
+                block 
+                appearance-none 
+                border-none 
+                bg-transparent
+                font-bold">
+                    <fa-icon [icon]="send"></fa-icon>
+                </button>
+            </form>
+        </div>
+    </div>
+    <!--Reaction section-->
+    <div class="p-2 flex justify-center w-full">
+        <button class="
+        block 
+        appearance-none 
+        border-none 
+        bg-slate-800/50
+        w-full
+        p-2
+        font-bold
+        text-blue-700
+        text-[20px]
+        "
+        (click)="likePost()">
+            <fa-icon [icon]="like"></fa-icon>
+        </button>
+    </div>
+</div>

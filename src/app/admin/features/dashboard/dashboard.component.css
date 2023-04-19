@@ -1,0 +1,16 @@
+.page{
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    flex-direction: row;
+}
+.page-content{
+    overflow: auto;
+}
+
+@media screen and(max-width:700px) {
+    .page{
+        flex-direction: column;
+    }
+}

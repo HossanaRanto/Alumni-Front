@@ -1,0 +1,14 @@
+<div class="rounded-xl min-h-[15rem] w-[25%] max-w-[10rem] min-w-[10rem] p-3 flex flex-col justify-between text-center border border-blue-500 gap-2">
+    <div class="w-full flex items-center justify-center">
+        <div class="gradiant-border w-20 h-20 rounded-3xl">
+            <div class="gradiant-div rounded-3xl">
+                <img src="{{Student?.profilPicture!}}" class="w-full h-full rounded-3xl object-cover object-center">
+            </div>
+        </div>
+    </div>
+    <div class="space-y-3 w-full">
+        <h4 class="font-bold mb-2">{{Student?.user?.username!}}</h4>
+        <a routerLink="['/user',Student?.user?.id!]" class="gradiant-button w-full">View Profil</a>
+        <button class="gradiant-button w-full">Start Interaction</button>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<!-- <div class="w-full">
+
+    <div class="filter">
+        <label class="filter-label">Student to show:</label>
+        <select class="
+        w-full 
+        bg-transparent 
+        border 
+        border-gray-600 
+        text-gray-700 
+        py-3 
+        px-4 
+        pr-8 
+        rounded 
+        leading-tight 
+        focus:outline-none 
+        focus:bg-transparent 
+        focus:border-gray-500">
+            <option>Alumni</option>
+            <option>Actual student</option>
+        </select>
+    </div>
+
+    <div class="flex flex-wrap gap-3 list p-3">
+        <app-student></app-student>
+        <app-student></app-student>
+        <app-student></app-student>
+        <app-student></app-student>
+    </div>
+</div> -->
+
+<div class="w-full h-full p-3">
+    <div class="w-full flex items-center text-center font-bold text-[14px] border border-blue-500 mb-3">
+        <a [routerLink]="['/admin','list','student']" routerLinkActive="active"
+        class="w-full"
+        >
+            Student
+        </a>
+        <a [routerLink]="['/admin','list','alumni']" routerLinkActive="active"
+        class="w-full"
+        >
+            Alumni
+        </a>
+    </div>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

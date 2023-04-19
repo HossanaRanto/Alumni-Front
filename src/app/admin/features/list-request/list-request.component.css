@@ -1,0 +1,9 @@
+.list{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+app-request{
+    width: 20%;
+    min-width: 13rem;
+}

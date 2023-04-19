@@ -1,0 +1,39 @@
+<div class="mb-2 flex gap-2">
+    <h4 class="font-bold text-[16px]">Firstname: </h4>
+    <span>{{user?.firstname}}</span>
+</div>
+<div class="mb-2 flex gap-2">
+    <h4 class="font-bold text-[16px]">Lastname: </h4>
+    <span>{{user?.lastname}}</span>
+</div>
+<div class="mb-2 flex gap-2">
+    <h4 class="font-bold text-[16px]">Gender: </h4>
+    <span>{{gender_string}}</span>
+</div>
+<div class="mb-2 flex gap-2">
+    <h4 class="font-bold text-[16px]">Birth Date: </h4>
+    <span>{{user?.birthdate | date:'fullDate'}}</span>
+</div>
+<div class="mb-2 flex gap-2">
+    <h4 class="font-bold text-[16px]">Contact: </h4>
+    <span>{{user?.contact}}</span>
+</div>
+<div class="mb-2 flex gap-2">
+    <h4 class="font-bold text-[16px]">Email: </h4>
+    <span>{{user?.email}}</span>
+</div>
+<div class="mb-2 border border-slate-600 p-3">
+    <h4 class="font-bold text-[20px] text-center">Address</h4>
+    <div class="mb-2 flex gap-2">
+        <h4 class="font-bold text-[16px]">Country: </h4>
+        <span>{{user?.address?.country}}</span>
+    </div>
+    <div class="mb-2 flex gap-2">
+        <h4 class="font-bold text-[16px]">City: </h4>
+        <span>{{user?.address?.city}}</span>
+    </div>
+    <div class="mb-2 flex gap-2">
+        <h4 class="font-bold text-[16px]">Postal code: </h4>
+        <span>{{user?.address?.postalcode}}</span>
+    </div>
+</div>

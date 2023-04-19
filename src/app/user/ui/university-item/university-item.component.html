@@ -1,0 +1,22 @@
+<a [routerLink]="['/university',this.University.university.id!]" class="
+rounded-md
+hover:bg-slate-800
+w-full
+flex
+gap-2
+items-center
+p-1">
+    <img src="{{University.university.imageCover!}}" class="
+    w-[3rem] 
+    h-[3rem] 
+    rounded-[50%]
+    object-cover
+    object-top">
+    <div class="w-full p-1">
+        <h4>{{University.university.name!}}</h4>
+        <p class="text-slate-700">{{University.university.description!}}</p>
+        <button *ngIf="!University.isEnrolled && !University.isRequestSent" 
+        class="bg-gradient-to-tr from-blue-700 w-full p-1 rounded-lg"
+        (click)="sentRequest($event)">Join</button>
+    </div>
+</a>

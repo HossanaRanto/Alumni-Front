@@ -1,0 +1,40 @@
+<!-- <div class="
+border 
+border-slate-500 
+w-full 
+min-h-[100vh]
+parent">
+    <h2 class="text-[30px] h-10 font-extrabold text-center">Messages</h2>
+    <div class="chat-content">
+        <div class="flex w-full h-full">
+            <div class="
+            border 
+            border-slate-500
+            w-[30rem]
+            h-full
+            "
+            >
+                <app-oldchatlist></app-oldchatlist>
+            </div>
+            <div class="
+            border 
+            border-slate-500 
+            w-[100%]
+            message-container
+            ">
+                <app-message></app-message>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="parent border border-slate-800">
+    <div class="chat-content">
+        <div class="h-full overflow-auto border border-slate-700 w-[25rem]">
+            <app-oldchatlist></app-oldchatlist>
+        </div>
+        <div class="h-full w-full">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

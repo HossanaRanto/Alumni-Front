@@ -1,0 +1,14 @@
+<div>
+    <div class="p-2 flex w-full flex-col gap-2">
+        <input type="text" class="block appearance-none bg-slate-800 text-slate-500 rounded-2xl w-full p-2">
+        <a class="gradiant-button w-full" [routerLink]="['/university-create']">Create my university</a>
+    </div>
+    <div class="w-full p-2 h-[100%] overflow-auto space-x-2">
+        <app-university-item *ngFor="let university of universities" [University]="university"></app-university-item>
+        <!-- <app-university-item></app-university-item>
+        <app-university-item></app-university-item>
+        <app-university-item></app-university-item>
+        <app-university-item></app-university-item>
+        <app-university-item></app-university-item> -->
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="main p-3">
+    <div class="w-full flex justify-center text-center">
+        <div class="w-[50%]">
+            <div class="h-[15rem] w-full gradiant-border">
+                <div class="gradiant-div">
+                    <img class="h-full w-full object-cover object-top" src="{{University?.university?.imageCover}}">
+                </div>
+            </div>
+            <h4 class="text-blue-700 font-bold text-[30px]">{{University?.university?.name}}</h4>
+            <p class="text-slate-700 font-semibold text-[14px]">{{University?.university?.description}}</p>
+            <h4 *ngIf="University?.isRequestSent">You are already sent a request</h4>
+            <h4 *ngIf="University?.isEnrolled">You are already a student</h4>
+
+            <button *ngIf="!University?.isEnrolled && !University?.isRequestSent" 
+            class="gradiant-button w-full"
+            (click)="sentRequest($event)" >Want to join?</button>
+        </div>
+    </div>
+    <div class="w-full h-full p-3">
+        <div class="w-full flex items-center text-center font-bold text-[14px] border border-blue-500 mb-3">
+            <a [routerLink]="['/university',this.university_id,'student']" routerLinkActive="active"
+            class="w-full"
+            >
+                Student
+            </a>
+            <a [routerLink]="['/university',this.university_id,'alumni']" routerLinkActive="active"
+            class="w-full"
+            >
+                Alumni
+            </a>
+        </div>
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

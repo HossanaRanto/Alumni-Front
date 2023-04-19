@@ -1,0 +1,27 @@
+.main{
+    /* background-color: red; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.details{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .5rem;
+}
+.messages{
+    padding: .5rem;
+    /* background-color: black; */
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: .5rem;
+}
+.send-message{
+    padding: 1rem;
+}
+

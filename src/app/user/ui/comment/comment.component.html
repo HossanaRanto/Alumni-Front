@@ -1,0 +1,10 @@
+<div class="
+bg-gray-800 
+rounded-xl 
+min-w-[5rem]
+p-2">
+    <a [routerLink]="['/user',this.Comment?.commentator?.id]" class="font-bold">
+        {{this.Comment?.commentator?.username}}
+    </a>
+    <p>{{this.Comment?.content}}</p>
+</div>

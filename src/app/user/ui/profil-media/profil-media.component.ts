@@ -3,9 +3,10 @@ import { ExchangeDataService } from '../../services/exchange-data.service';
 import { UserService } from '../../services/user.service';
 
 @Component({
-  selector: 'app-profil-media',
-  templateUrl: './profil-media.component.html',
-  styleUrls: ['./profil-media.component.css']
+    selector: 'app-profil-media',
+    templateUrl: './profil-media.component.html',
+    styleUrls: ['./profil-media.component.css'],
+    standalone: false
 })
 export class ProfilMediaComponent implements OnInit{
   offset:number=0

@@ -1,6 +1,8 @@
 <div class="w-full space-y-4">
-    <a [routerLink]="['/university']" class="gradiant-button">Join an university</a>
-    <div class="list-universities space-x-3">
-        <app-university-details *ngFor="let university of universities" [university]="university"></app-university-details>
-    </div>
+  <a [routerLink]="['/university']" class="gradiant-button">Join an university</a>
+  <div class="list-universities space-x-3">
+    @for (university of universities; track university) {
+      <app-university-details [university]="university"></app-university-details>
+    }
+  </div>
 </div>

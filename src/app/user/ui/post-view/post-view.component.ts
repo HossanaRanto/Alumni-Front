@@ -8,9 +8,10 @@ import { Commentary, Post, PostView } from 'src/app/Models/Model';
 import { PostService } from 'src/app/user/services/post.service';
 
 @Component({
-  selector: 'app-post-view',
-  templateUrl: './post-view.component.html',
-  styleUrls: ['./post-view.component.css']
+    selector: 'app-post-view',
+    templateUrl: './post-view.component.html',
+    styleUrls: ['./post-view.component.css'],
+    standalone: false
 })
 export class PostViewComponent implements OnInit{
   

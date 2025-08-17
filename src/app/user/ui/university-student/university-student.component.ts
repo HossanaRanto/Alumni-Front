@@ -2,9 +2,10 @@ import { Component, Input } from '@angular/core';
 import { UserSerializer } from 'src/app/Models/Model';
 
 @Component({
-  selector: 'app-university-student',
-  templateUrl: './university-student.component.html',
-  styleUrls: ['./university-student.component.css']
+    selector: 'app-university-student',
+    templateUrl: './university-student.component.html',
+    styleUrls: ['./university-student.component.css'],
+    standalone: false
 })
 export class UniversityStudentComponent {
   @Input() Student?:UserSerializer

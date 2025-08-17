@@ -1,11 +1,13 @@
 <div class="flex flex-wrap gap-3">
-    <app-university-student *ngFor="let student of Students" [Student]="student"></app-university-student>
-    <!-- <app-university-student></app-university-student>
-    <app-university-student></app-university-student>
-    <app-university-student></app-university-student>
-    <app-university-student></app-university-student>
-    <app-university-student></app-university-student>
-    <app-university-student></app-university-student>
-    <app-university-student></app-university-student> -->
+  @for (student of Students; track student) {
+    <app-university-student [Student]="student"></app-university-student>
+  }
+  <!-- <app-university-student></app-university-student>
+  <app-university-student></app-university-student>
+  <app-university-student></app-university-student>
+  <app-university-student></app-university-student>
+  <app-university-student></app-university-student>
+  <app-university-student></app-university-student>
+  <app-university-student></app-university-student> -->
 
 </div>

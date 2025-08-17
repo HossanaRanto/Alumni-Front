@@ -1,4 +1,4 @@
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,34 +19,28 @@ import { TestComponent } from './test/test.component';
 import { DatePipe } from '@angular/common';
 // import { ChatComponent } from './features/chat/chat.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    NotFoundComponent,
-    TestComponent
-    // LoginComponent
-  ],
-  imports: [
-    BrowserModule,
-    RouterModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    AuthModule,
-    ReactiveFormsModule,
-    ToastrModule.forRoot(),
-    AdminModule,
-    UserModule,
-    FontAwesomeModule
-  ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor, 
-      multi: true
-    },
-    DatePipe
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        NotFoundComponent,
+        TestComponent
+        // LoginComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        RouterModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        AuthModule,
+        ReactiveFormsModule,
+        ToastrModule.forRoot(),
+        AdminModule,
+        UserModule,
+        FontAwesomeModule], providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthInterceptor,
+            multi: true
+        },
+        DatePipe,
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule { }

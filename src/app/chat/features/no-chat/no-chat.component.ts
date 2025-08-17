@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-no-chat',
-  templateUrl: './no-chat.component.html',
-  styleUrls: ['./no-chat.component.css']
+    selector: 'app-no-chat',
+    templateUrl: './no-chat.component.html',
+    styleUrls: ['./no-chat.component.css'],
+    standalone: false
 })
 export class NoChatComponent {
 

@@ -1,16 +1,22 @@
 <div class="relative w-full h-full">
-    <button class="gradiant-button right-[5rem] bottom-[2rem] w-[3rem] h-[3rem] rounded-[50%] fixed" (click)="createPost(true)">
-        <fa-icon [icon]="faPlus"></fa-icon>
-    </button>
-    <div class="w-full space-y-2 flex justify-center p-3 h-full overflow-auto flex-col" (scroll)="infiniteScroll($event)" #container>
-        <div class="h-full">
-            <app-post-view *ngFor="let post of posts" [Post]="post"></app-post-view>
-        </div>
-        <!-- <app-post-view></app-post-view>
-        <app-post-view></app-post-view>
-        <app-post-view></app-post-view>
-        <app-post-view></app-post-view> -->
-        <app-spinner *ngIf="isloading"></app-spinner>
+  <button class="gradiant-button right-[5rem] bottom-[2rem] w-[3rem] h-[3rem] rounded-[50%] fixed" (click)="createPost(true)">
+    <fa-icon [icon]="faPlus"></fa-icon>
+  </button>
+  <div class="w-full space-y-2 flex justify-center p-3 h-full overflow-auto flex-col" (scroll)="infiniteScroll($event)" #container>
+    <div class="h-full">
+      @for (post of posts; track post) {
+        <app-post-view [Post]="post"></app-post-view>
+      }
     </div>
-    <app-post *ngIf="isCreatenewPost" (Close)="createPost(false)"></app-post>
+    <!-- <app-post-view></app-post-view>
+    <app-post-view></app-post-view>
+    <app-post-view></app-post-view>
+    <app-post-view></app-post-view> -->
+    @if (isloading) {
+      <app-spinner></app-spinner>
+    }
+  </div>
+  @if (isCreatenewPost) {
+    <app-post (Close)="createPost(false)"></app-post>
+  }
 </div>

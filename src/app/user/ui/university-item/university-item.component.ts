@@ -5,9 +5,10 @@ import { UniversityView } from 'src/app/Models/Model';
 import { UniversityService } from '../../services/university.service';
 
 @Component({
-  selector: 'app-university-item',
-  templateUrl: './university-item.component.html',
-  styleUrls: ['./university-item.component.css']
+    selector: 'app-university-item',
+    templateUrl: './university-item.component.html',
+    styleUrls: ['./university-item.component.css'],
+    standalone: false
 })
 export class UniversityItemComponent {
   @Input() University!:UniversityView

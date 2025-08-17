@@ -1,3 +1,5 @@
 <div class="flex flex-wrap gap-3">
-    <app-student *ngFor="let student of Students" [Student]="student" [canGraduate]="canGraduate"  (graduate_emitter)="removeStudent(student)"></app-student>
+  @for (student of Students; track student) {
+    <app-student [Student]="student" [canGraduate]="canGraduate"  (graduate_emitter)="removeStudent(student)"></app-student>
+  }
 </div>

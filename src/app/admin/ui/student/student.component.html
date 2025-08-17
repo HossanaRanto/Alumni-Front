@@ -1,38 +1,40 @@
 <!-- <div class="max-h-[8rem] bg-[#2B3545] p-3 flex items-center gap-2 justify-between">
-    <div class="w-[5rem]">
-        <img class="rounded-3xl w-[3rem] h-[3rem] object-cover object-center" src="assets/test.jpg">
+<div class="w-[5rem]">
+  <img class="rounded-3xl w-[3rem] h-[3rem] object-cover object-center" src="assets/test.jpg">
+</div>
+<div class="w-full">
+  <div>
+    <h3 class="text-white font-bold">Name</h3>
+    <h4 class="text-white">Date join</h4>
+  </div>
+  <div class="flex gap-1 justify-end">
+    <div></div>
+    <div class="flex gap-1">
+      <button class="bg-blue-700 rounded-[50%] text-white w-[2rem] h-[2rem] p-2 flex justify-center items-center">
+        <fa-icon [icon]="close"></fa-icon>
+      </button>
+      <button class="bg-red-600 rounded-[50%] text-white w-[2rem] h-[2rem] p-2 flex justify-center items-center">
+        <fa-icon [icon]="trash"></fa-icon>
+      </button>
     </div>
-    <div class="w-full">
-        <div>
-            <h3 class="text-white font-bold">Name</h3>
-            <h4 class="text-white">Date join</h4>
-        </div>
-        <div class="flex gap-1 justify-end">
-            <div></div>
-            <div class="flex gap-1">
-                <button class="bg-blue-700 rounded-[50%] text-white w-[2rem] h-[2rem] p-2 flex justify-center items-center">
-                    <fa-icon [icon]="close"></fa-icon>
-                </button>
-                <button class="bg-red-600 rounded-[50%] text-white w-[2rem] h-[2rem] p-2 flex justify-center items-center">
-                    <fa-icon [icon]="trash"></fa-icon>
-                </button>
-            </div>
-        </div>
-    </div>
+  </div>
+</div>
 </div> -->
 
 <div class="rounded-xl min-h-[15rem] w-[25%] max-w-[10rem] min-w-[10rem] p-3 flex flex-col justify-between text-center border border-blue-500 gap-2">
-    <div class="w-full flex items-center justify-center">
-        <div class="gradiant-border w-20 h-20 rounded-3xl">
-            <div class="gradiant-div rounded-3xl">
-                <img src="{{Student?.profilPicture!}}" class="w-full h-full rounded-3xl object-cover object-center">
-            </div>
-        </div>
+  <div class="w-full flex items-center justify-center">
+    <div class="gradiant-border w-20 h-20 rounded-3xl">
+      <div class="gradiant-div rounded-3xl">
+        <img src="{{Student?.profilPicture!}}" class="w-full h-full rounded-3xl object-cover object-center">
+      </div>
     </div>
-    <div class="space-y-3 w-full">
-        <h4 class="font-bold mb-2">{{Student?.user?.username!}}</h4>
-        <a routerLink="['/user',Student?.user?.id!]" class="gradiant-button w-full">View Profil</a>
+  </div>
+  <div class="space-y-3 w-full">
+    <h4 class="font-bold mb-2">{{Student?.user?.username!}}</h4>
+    <a routerLink="['/user',Student?.user?.id!]" class="gradiant-button w-full">View Profil</a>
 
-        <button *ngIf="canGraduate" class="gradiant-button w-full" (click)="graduate()">Graduate</button>
-    </div>
+    @if (canGraduate) {
+      <button class="gradiant-button w-full" (click)="graduate()">Graduate</button>
+    }
+  </div>
 </div>

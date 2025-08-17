@@ -7,9 +7,10 @@ import { UniversityService } from 'src/app/user/services/university.service';
 import { universityExist } from 'src/app/user/Validators/university-validator';
 
 @Component({
-  selector: 'app-create-university',
-  templateUrl: './create-university.component.html',
-  styleUrls: ['./create-university.component.css']
+    selector: 'app-create-university',
+    templateUrl: './create-university.component.html',
+    styleUrls: ['./create-university.component.css'],
+    standalone: false
 })
 export class CreateUniversityComponent {
   faCam=faCamera

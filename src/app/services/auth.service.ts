@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse} from '@angular/common/http'
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http'
 import { BASE_URL } from './api';
 import { Authentication, TokenModel, User, UserSerializer } from '../Models/Model';
 import { catchError, Observable, tap } from 'rxjs';

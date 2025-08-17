@@ -4,9 +4,10 @@ import { Request, RequestSerializer } from 'src/app/Models/Model';
 import { AdminService } from '../../services/admin.service';
 
 @Component({
-  selector: 'app-request',
-  templateUrl: './request.component.html',
-  styleUrls: ['./request.component.css']
+    selector: 'app-request',
+    templateUrl: './request.component.html',
+    styleUrls: ['./request.component.css'],
+    standalone: false
 })
 export class RequestComponent{
 

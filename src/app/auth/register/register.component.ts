@@ -9,9 +9,10 @@ import { AuthService } from 'src/app/services/auth.service';
 import { birthDate, emailExist, onlyNumbersValidator, userExist } from '../Validators/AuthValidators';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+    selector: 'app-register',
+    templateUrl: './register.component.html',
+    styleUrls: ['./register.component.css'],
+    standalone: false
 })
 export class RegisterComponent implements OnInit,OnDestroy {
   constructor(private service:AuthService,private route:Router,private toaster:ToastrService){}

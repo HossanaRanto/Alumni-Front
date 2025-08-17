@@ -4,9 +4,10 @@ import { UserSerializer } from 'src/app/Models/Model';
 import { UniversityService } from '../../services/university.service';
 
 @Component({
-  selector: 'app-university-students',
-  templateUrl: './university-students.component.html',
-  styleUrls: ['./university-students.component.css']
+    selector: 'app-university-students',
+    templateUrl: './university-students.component.html',
+    styleUrls: ['./university-students.component.css'],
+    standalone: false
 })
 export class UniversityStudentsComponent implements OnInit {
 

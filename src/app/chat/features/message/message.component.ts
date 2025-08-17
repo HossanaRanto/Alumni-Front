@@ -7,9 +7,10 @@ import { UserService } from 'src/app/user/services/user.service';
 import { ChatService } from '../../services/chat.service';
 
 @Component({
-  selector: 'app-message',
-  templateUrl: './message.component.html',
-  styleUrls: ['./message.component.css']
+    selector: 'app-message',
+    templateUrl: './message.component.html',
+    styleUrls: ['./message.component.css'],
+    standalone: false
 })
 export class MessageComponent implements OnInit{
 

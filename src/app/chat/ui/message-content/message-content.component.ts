@@ -2,9 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Message } from 'src/app/Models/Model';
 
 @Component({
-  selector: 'app-message-content',
-  templateUrl: './message-content.component.html',
-  styleUrls: ['./message-content.component.css']
+    selector: 'app-message-content',
+    templateUrl: './message-content.component.html',
+    styleUrls: ['./message-content.component.css'],
+    standalone: false
 })
 export class MessageContentComponent implements OnInit{
   ngOnInit(): void {

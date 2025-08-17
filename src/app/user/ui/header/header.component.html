@@ -1,36 +1,38 @@
 <div class="p-2 bg-slate-900 shadow-xl flex items-center justify-between h-full w-[6rem] flex-col">
-    <div class="gradiant-border rounded-[50%]">
-        <div class="gradiant-div rounded-[50%] p-1">
-            <img class="rounded-[50%] w-[3rem] h-[3rem] object-cover object-top" src="assets/test2.jpg">
-        </div>
+  <div class="gradiant-border rounded-[50%]">
+    <div class="gradiant-div rounded-[50%] p-1">
+      <img class="rounded-[50%] w-[3rem] h-[3rem] object-cover object-top" src="assets/test2.jpg">
     </div>
-    <div class="font-bold text-[25px] text-blue-500 text-center">
-        <h4>S</h4>
-        <h4>E</h4>
-        <h4>N</h4>
-        <h4>P</h4>
-        <h4>A</h4>
-        <h4>I</h4>
-    </div>
-    <div class="flex gap-2 flex-col">
-        <a [routerLink]="['/home']" routerLinkActive="icon-active" class="icon-inactive">
-            <fa-icon [icon]="faHome"></fa-icon>
-            <!-- <i class="fa-solid fa-house"></i> -->
-        </a>
-        <a [routerLink]="['/chat']" routerLinkActive="icon-active" class="icon-inactive">
-            <fa-icon [icon]="faChat"></fa-icon>
-        </a>
-        <a [routerLink]="['/university']" routerLinkActive="icon-active" class="icon-inactive">
-            <fa-icon [icon]="faUniversity"></fa-icon>
-        </a>
-        <a [routerLink]="['/point']" routerLinkActive="icon-active" class="icon-inactive" *ngIf="role=='alumni'">
-            <fa-icon [icon]="fapoint"></fa-icon>
-        </a>
-        <a [routerLink]="['/profil']" routerLinkActive="icon-active" class="icon-inactive">
-            <fa-icon [icon]="faProfil"></fa-icon>
-        </a>
-        <button class="icon-inactive" (click)="logout()">
-            <fa-icon [icon]="faLogout"></fa-icon>
-        </button>
-    </div>
+  </div>
+  <div class="font-bold text-[25px] text-blue-500 text-center">
+    <h4>S</h4>
+    <h4>E</h4>
+    <h4>N</h4>
+    <h4>P</h4>
+    <h4>A</h4>
+    <h4>I</h4>
+  </div>
+  <div class="flex gap-2 flex-col">
+    <a [routerLink]="['/home']" routerLinkActive="icon-active" class="icon-inactive">
+      <fa-icon [icon]="faHome"></fa-icon>
+      <!-- <i class="fa-solid fa-house"></i> -->
+    </a>
+    <a [routerLink]="['/chat']" routerLinkActive="icon-active" class="icon-inactive">
+      <fa-icon [icon]="faChat"></fa-icon>
+    </a>
+    <a [routerLink]="['/university']" routerLinkActive="icon-active" class="icon-inactive">
+      <fa-icon [icon]="faUniversity"></fa-icon>
+    </a>
+    @if (role=='alumni') {
+      <a [routerLink]="['/point']" routerLinkActive="icon-active" class="icon-inactive">
+        <fa-icon [icon]="fapoint"></fa-icon>
+      </a>
+    }
+    <a [routerLink]="['/profil']" routerLinkActive="icon-active" class="icon-inactive">
+      <fa-icon [icon]="faProfil"></fa-icon>
+    </a>
+    <button class="icon-inactive" (click)="logout()">
+      <fa-icon [icon]="faLogout"></fa-icon>
+    </button>
+  </div>
 </div>

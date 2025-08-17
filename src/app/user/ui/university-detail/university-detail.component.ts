@@ -6,9 +6,10 @@ import { UniversityView } from 'src/app/Models/Model';
 import { UniversityService } from '../../services/university.service';
 
 @Component({
-  selector: 'app-university-detail',
-  templateUrl: './university-detail.component.html',
-  styleUrls: ['./university-detail.component.css']
+    selector: 'app-university-detail',
+    templateUrl: './university-detail.component.html',
+    styleUrls: ['./university-detail.component.css'],
+    standalone: false
 })
 export class UniversityDetailComponent implements OnInit{
   university_id!:number

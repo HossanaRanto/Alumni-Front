@@ -12,9 +12,10 @@ import { UserService } from '../../services/user.service';
 import { emailExist, userExist } from '../../Validators/profil-validator';
 
 @Component({
-  selector: 'app-profil-pers-info',
-  templateUrl: './profil-pers-info.component.html',
-  styleUrls: ['./profil-pers-info.component.css']
+    selector: 'app-profil-pers-info',
+    templateUrl: './profil-pers-info.component.html',
+    styleUrls: ['./profil-pers-info.component.css'],
+    standalone: false
 })
 export class ProfilPersInfoComponent implements OnInit{
 

@@ -1,16 +1,18 @@
 <div class="w-full h-[100%] overflow-auto">
-    <!-- <app-oldchat></app-oldchat>
-    <app-oldchat></app-oldchat>
-    <app-oldchat></app-oldchat>
-    <app-oldchat></app-oldchat>
-    <app-oldchat></app-oldchat>
-    <app-oldchat></app-oldchat>
-    <app-oldchat></app-oldchat>
-    <app-oldchat></app-oldchat>
-    <app-oldchat></app-oldchat>
-    <app-oldchat></app-oldchat>
-    <app-oldchat></app-oldchat>
-    <app-oldchat></app-oldchat> -->
+  <!-- <app-oldchat></app-oldchat>
+  <app-oldchat></app-oldchat>
+  <app-oldchat></app-oldchat>
+  <app-oldchat></app-oldchat>
+  <app-oldchat></app-oldchat>
+  <app-oldchat></app-oldchat>
+  <app-oldchat></app-oldchat>
+  <app-oldchat></app-oldchat>
+  <app-oldchat></app-oldchat>
+  <app-oldchat></app-oldchat>
+  <app-oldchat></app-oldchat>
+  <app-oldchat></app-oldchat> -->
 
-    <app-oldchat *ngFor="let chat of oldmessages$ |async" [OldMessage]="chat"></app-oldchat>
+  @for (chat of oldmessages$ |async; track chat) {
+    <app-oldchat [OldMessage]="chat"></app-oldchat>
+  }
 </div>

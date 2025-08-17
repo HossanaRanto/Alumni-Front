@@ -4,9 +4,10 @@ import { Point } from 'src/app/Models/Model';
 import { UserService } from 'src/app/user/services/user.service';
 
 @Component({
-  selector: 'app-point',
-  templateUrl: './point.component.html',
-  styleUrls: ['./point.component.css']
+    selector: 'app-point',
+    templateUrl: './point.component.html',
+    styleUrls: ['./point.component.css'],
+    standalone: false
 })
 export class PointComponent implements OnInit{
   

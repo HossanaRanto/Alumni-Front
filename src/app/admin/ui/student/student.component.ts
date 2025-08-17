@@ -6,9 +6,10 @@ import { User, UserSerializer } from 'src/app/Models/Model';
 import { AdminService } from '../../services/admin.service';
 
 @Component({
-  selector: 'app-student',
-  templateUrl: './student.component.html',
-  styleUrls: ['./student.component.css']
+    selector: 'app-student',
+    templateUrl: './student.component.html',
+    styleUrls: ['./student.component.css'],
+    standalone: false
 })
 export class StudentComponent {
   close=faClose

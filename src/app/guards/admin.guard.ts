@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { CanMatch, Route, Router, UrlSegment, UrlTree } from '@angular/router';
+import { Route, Router, UrlSegment, UrlTree } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AdminGuard implements CanMatch {
+export class AdminGuard  {
 
   constructor(private service:AuthService,private router:Router){
 

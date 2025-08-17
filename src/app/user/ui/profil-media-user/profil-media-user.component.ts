@@ -4,9 +4,10 @@ import { ExchangeDataService } from '../../services/exchange-data.service';
 import { UserService } from '../../services/user.service';
 
 @Component({
-  selector: 'app-profil-media-user',
-  templateUrl: './profil-media-user.component.html',
-  styleUrls: ['./profil-media-user.component.css']
+    selector: 'app-profil-media-user',
+    templateUrl: './profil-media-user.component.html',
+    styleUrls: ['./profil-media-user.component.css'],
+    standalone: false
 })
 export class ProfilMediaUserComponent implements OnInit {
 

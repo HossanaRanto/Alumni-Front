@@ -9,7 +9,7 @@ import { UniversityService } from '../../services/university.service';
     selector: 'app-university-detail',
     templateUrl: './university-detail.component.html',
     styleUrls: ['./university-detail.component.css'],
-    standalone: false
+    standalone: true
 })
 export class UniversityDetailComponent implements OnInit{
   university_id!:number

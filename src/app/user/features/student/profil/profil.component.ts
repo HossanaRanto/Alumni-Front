@@ -10,10 +10,10 @@ import { UserService } from 'src/app/user/services/user.service';
 import { emailExist, userExist } from 'src/app/user/Validators/profil-validator';
 
 @Component({
-    selector: 'app-profil',
-    templateUrl: './profil.component.html',
-    styleUrls: ['./profil.component.css'],
-    standalone: false
+  selector: 'app-profil',
+  templateUrl: './profil.component.html',
+  styleUrls: ['./profil.component.css'],
+  standalone: true
 })
 export class ProfilComponent implements OnInit {
   camera=faCamera

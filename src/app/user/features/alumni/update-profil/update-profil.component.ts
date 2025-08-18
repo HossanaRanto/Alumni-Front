@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
     selector: 'app-update-profil',
     templateUrl: './update-profil.component.html',
     styleUrls: ['./update-profil.component.css'],
-    standalone: false
+    standalone: true
 })
 export class UpdateProfilComponent {
 

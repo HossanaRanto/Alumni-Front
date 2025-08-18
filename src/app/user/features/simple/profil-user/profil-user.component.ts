@@ -5,10 +5,10 @@ import { ExchangeDataService } from 'src/app/user/services/exchange-data.service
 import { UserService } from 'src/app/user/services/user.service';
 
 @Component({
-    selector: 'app-profil-user',
-    templateUrl: './profil-user.component.html',
-    styleUrls: ['./profil-user.component.css'],
-    standalone: false
+  selector: 'app-profil-user',
+  templateUrl: './profil-user.component.html',
+  styleUrls: ['./profil-user.component.css'],
+  standalone: true
 })
 export class ProfilUserComponent implements OnInit{
   

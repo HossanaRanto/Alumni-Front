@@ -5,8 +5,6 @@ import { University } from 'src/app/Models/Model';
     selector: 'app-university',
     templateUrl: './university.component.html',
     styleUrls: ['./university.component.css'],
-    standalone: false
+    standalone: true
 })
-export class UniversityComponent {
-  
-}
+export class UniversityComponent {}

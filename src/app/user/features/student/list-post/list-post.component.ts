@@ -7,10 +7,10 @@ import { PostService } from 'src/app/user/services/post.service';
 
 
 @Component({
-    selector: 'app-list-post',
-    templateUrl: './list-post.component.html',
-    styleUrls: ['./list-post.component.css'],
-    standalone: false
+  selector: 'app-list-post',
+  templateUrl: './list-post.component.html',
+  styleUrls: ['./list-post.component.css'],
+  standalone: true
 })
 export class ListPostComponent implements OnInit {
   faPlus=faPlus

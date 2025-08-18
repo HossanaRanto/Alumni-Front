@@ -4,12 +4,12 @@ import { Request, RequestSerializer } from 'src/app/Models/Model';
 import { AdminService } from '../../services/admin.service';
 
 @Component({
-    selector: 'app-request',
-    templateUrl: './request.component.html',
-    styleUrls: ['./request.component.css'],
-    standalone: false
+  selector: 'app-request',
+  templateUrl: './request.component.html',
+  styleUrls: ['./request.component.css'],
+  standalone: true
 })
-export class RequestComponent{
+export class RequestComponent {
 
   acceptRequest$!:Observable<any>
   rejectRequest$!:Observable<any>

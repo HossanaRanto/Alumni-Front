@@ -1,16 +1,19 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { concat, Observable, of, switchMap, tap } from 'rxjs';
 import { Message, MessageOffset, UserSerializer } from 'src/app/Models/Model';
 import { UserService } from 'src/app/user/services/user.service';
 import { ChatService } from '../../services/chat.service';
+import { MessageContentComponent } from '../../ui/message-content/message-content.component';
+import { SpinnerComponent } from 'src/app/ui/spinner/spinner.component';
 
 @Component({
+  imports: [ReactiveFormsModule, MessageContentComponent, SpinnerComponent],
     selector: 'app-message',
     templateUrl: './message.component.html',
     styleUrls: ['./message.component.css'],
-    standalone: false
+    standalone: true
 })
 export class MessageComponent implements OnInit{
 

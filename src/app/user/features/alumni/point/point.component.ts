@@ -7,7 +7,7 @@ import { UserService } from 'src/app/user/services/user.service';
     selector: 'app-point',
     templateUrl: './point.component.html',
     styleUrls: ['./point.component.css'],
-    standalone: false
+    standalone: true
 })
 export class PointComponent implements OnInit{
   

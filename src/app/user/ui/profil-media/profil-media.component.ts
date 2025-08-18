@@ -6,7 +6,7 @@ import { UserService } from '../../services/user.service';
     selector: 'app-profil-media',
     templateUrl: './profil-media.component.html',
     styleUrls: ['./profil-media.component.css'],
-    standalone: false
+    standalone: true
 })
 export class ProfilMediaComponent implements OnInit{
   offset:number=0

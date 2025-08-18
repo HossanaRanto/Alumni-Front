@@ -4,10 +4,10 @@ import { faBuilding, faHome, faListNumeric, faMessage, faSignOut, faUser } from 
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-    selector: 'app-header',
-    templateUrl: './header.component.html',
-    styleUrls: ['./header.component.css'],
-    standalone: false
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css'],
+  standalone: true
 })
 export class HeaderComponent {
   faHome=faHome

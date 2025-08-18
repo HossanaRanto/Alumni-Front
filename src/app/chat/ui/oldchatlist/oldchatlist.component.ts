@@ -4,10 +4,10 @@ import { LastMessage } from 'src/app/Models/Model';
 import { ChatService } from '../../services/chat.service';
 
 @Component({
-    selector: 'app-oldchatlist',
-    templateUrl: './oldchatlist.component.html',
-    styleUrls: ['./oldchatlist.component.css'],
-    standalone: false
+  selector: 'app-oldchatlist',
+  templateUrl: './oldchatlist.component.html',
+  styleUrls: ['./oldchatlist.component.css'],
+  standalone: true
 })
 export class OldchatlistComponent implements OnInit {
   oldmessages$?:Observable<LastMessage[]>

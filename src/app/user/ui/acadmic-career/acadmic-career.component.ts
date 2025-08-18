@@ -3,10 +3,10 @@ import { University } from 'src/app/Models/Model';
 import { UserService } from '../../services/user.service';
 
 @Component({
-    selector: 'app-acadmic-career',
-    templateUrl: './acadmic-career.component.html',
-    styleUrls: ['./acadmic-career.component.css'],
-    standalone: false
+  selector: 'app-acadmic-career',
+  templateUrl: './acadmic-career.component.html',
+  styleUrls: ['./acadmic-career.component.css'],
+  standalone: true
 })
 export class AcadmicCareerComponent implements OnInit {
   universities:{university:University}[]=[]

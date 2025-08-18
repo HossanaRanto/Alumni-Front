@@ -11,7 +11,7 @@ import { PostService } from 'src/app/user/services/post.service';
     selector: 'app-post-view',
     templateUrl: './post-view.component.html',
     styleUrls: ['./post-view.component.css'],
-    standalone: false
+    standalone: true
 })
 export class PostViewComponent implements OnInit{
   

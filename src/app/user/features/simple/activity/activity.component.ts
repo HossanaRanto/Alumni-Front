@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
     selector: 'app-activity',
     templateUrl: './activity.component.html',
     styleUrls: ['./activity.component.css'],
-    standalone: false
+    standalone: true
 })
-export class ActivityComponent {
-
-}
+export class ActivityComponent {}

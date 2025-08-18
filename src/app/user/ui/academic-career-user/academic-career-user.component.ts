@@ -4,10 +4,10 @@ import { University } from 'src/app/Models/Model';
 import { UserService } from '../../services/user.service';
 
 @Component({
-    selector: 'app-academic-career-user',
-    templateUrl: './academic-career-user.component.html',
-    styleUrls: ['./academic-career-user.component.css'],
-    standalone: false
+  selector: 'app-academic-career-user',
+  templateUrl: './academic-career-user.component.html',
+  styleUrls: ['./academic-career-user.component.css'],
+  standalone: true
 })
 export class AcademicCareerUserComponent {
   universities:{university:University}[]=[]

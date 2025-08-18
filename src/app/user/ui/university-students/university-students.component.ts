@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserSerializer } from 'src/app/Models/Model';
 import { UniversityService } from '../../services/university.service';
+import { UniversityStudentComponent } from '../university-student/university-student.component';
 
 @Component({
     selector: 'app-university-students',
     templateUrl: './university-students.component.html',
     styleUrls: ['./university-students.component.css'],
-    standalone: false
+    standalone: true,
+    imports: [UniversityStudentComponent]
 })
 export class UniversityStudentsComponent implements OnInit {
 

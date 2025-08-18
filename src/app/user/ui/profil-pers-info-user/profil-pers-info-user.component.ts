@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/Models/Model';
 import { ExchangeDataService } from '../../services/exchange-data.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-profil-pers-info-user',
   templateUrl: './profil-pers-info-user.component.html',
   styleUrls: ['./profil-pers-info-user.component.css'],
-  standalone: true
+  standalone: true,
+  imports: [DatePipe]
 })
 export class ProfilPersInfoUserComponent implements OnInit{
   user?:User

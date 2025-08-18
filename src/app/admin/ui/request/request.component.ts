@@ -2,12 +2,14 @@ import { Component, ComponentRef, Input, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Request, RequestSerializer } from 'src/app/Models/Model';
 import { AdminService } from '../../services/admin.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-request',
   templateUrl: './request.component.html',
   styleUrls: ['./request.component.css'],
-  standalone: true
+  standalone: true,
+  imports: [RouterLink]
 })
 export class RequestComponent {
 

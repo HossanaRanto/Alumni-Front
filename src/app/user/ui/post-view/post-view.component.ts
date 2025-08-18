@@ -1,17 +1,21 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { faArrowRight, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { ToastrService } from 'ngx-toastr';
 import { catchError, concat, Observable, tap } from 'rxjs';
 import { Commentary, Post, PostView } from 'src/app/Models/Model';
 // import { UserService } from '../../services/post.service';
 import { PostService } from 'src/app/user/services/post.service';
+import { CommentComponent } from '../comment/comment.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
     selector: 'app-post-view',
     templateUrl: './post-view.component.html',
     styleUrls: ['./post-view.component.css'],
-    standalone: true
+    standalone: true,
+    imports: [RouterLink, CommentComponent, ReactiveFormsModule, FontAwesomeModule]
 })
 export class PostViewComponent implements OnInit{
   

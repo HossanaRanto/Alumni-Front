@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 import { UserSerializer } from 'src/app/Models/Model';
 import { ExchangeDataService } from 'src/app/user/services/exchange-data.service';
 import { UserService } from 'src/app/user/services/user.service';
@@ -8,7 +8,8 @@ import { UserService } from 'src/app/user/services/user.service';
   selector: 'app-profil-user',
   templateUrl: './profil-user.component.html',
   styleUrls: ['./profil-user.component.css'],
-  standalone: true
+  standalone: true,
+  imports: [RouterLink, RouterOutlet]
 })
 export class ProfilUserComponent implements OnInit{
   

@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import { birthDate, onlyNumbersValidator } from 'src/app/auth/Validators/AuthValidators';
 // import { birthDate, emailExist, onlyNumbersValidator, userExist } from 'src/app/auth/Validators/AuthValidators';
@@ -13,7 +15,8 @@ import { emailExist, userExist } from 'src/app/user/Validators/profil-validator'
   selector: 'app-profil',
   templateUrl: './profil.component.html',
   styleUrls: ['./profil.component.css'],
-  standalone: true
+  standalone: true,
+  imports: [FontAwesomeModule, RouterLink, RouterOutlet]
 })
 export class ProfilComponent implements OnInit {
   camera=faCamera

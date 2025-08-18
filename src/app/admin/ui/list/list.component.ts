@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserSerializer } from 'src/app/Models/Model';
 import { AdminService } from '../../services/admin.service';
+import { StudentComponent } from '../student/student.component';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css'],
-  standalone: true
+  standalone: true,
+  imports: [StudentComponent]
 })
 export class ListComponent implements OnInit{
 

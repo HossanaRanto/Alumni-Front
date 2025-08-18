@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { catchError, tap } from 'rxjs';
 import { UniversityView } from 'src/app/Models/Model';
@@ -9,7 +9,8 @@ import { UniversityService } from '../../services/university.service';
     selector: 'app-university-detail',
     templateUrl: './university-detail.component.html',
     styleUrls: ['./university-detail.component.css'],
-    standalone: true
+    standalone: true,
+    imports: [RouterLink, RouterOutlet]
 })
 export class UniversityDetailComponent implements OnInit{
   university_id!:number

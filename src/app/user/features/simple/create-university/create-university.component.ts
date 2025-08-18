@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCamera, faSave } from '@fortawesome/free-solid-svg-icons';
 import { catchError, switchMap, tap } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
@@ -10,7 +11,8 @@ import { universityExist } from 'src/app/user/Validators/university-validator';
   selector: 'app-create-university',
   templateUrl: './create-university.component.html',
   styleUrls: ['./create-university.component.css'],
-  standalone: true
+  standalone: true,
+  imports: [FontAwesomeModule, ReactiveFormsModule]
 })
 export class CreateUniversityComponent {
   faCam=faCamera

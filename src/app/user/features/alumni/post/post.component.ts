@@ -1,5 +1,6 @@
 import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCameraAlt, faClose, faSave } from '@fortawesome/free-solid-svg-icons';
 import { ToastrService } from 'ngx-toastr';
 import { catchError, switchMap } from 'rxjs';
@@ -9,7 +10,8 @@ import { PostService } from 'src/app/user/services/post.service';
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css'],
-  standalone: true
+  standalone: true,
+  imports: [FontAwesomeModule, ReactiveFormsModule]
 })
 export class PostComponent {
   faCam=faCameraAlt

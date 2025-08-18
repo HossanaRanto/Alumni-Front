@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ExchangeDataService } from '../../services/exchange-data.service';
 import { UserService } from '../../services/user.service';
+import { SpinnerComponent } from 'src/app/ui/spinner/spinner.component';
 
 @Component({
     selector: 'app-profil-media-user',
     templateUrl: './profil-media-user.component.html',
     styleUrls: ['./profil-media-user.component.css'],
-    standalone: false
+    standalone: true,
+    imports: [SpinnerComponent]
 })
 export class ProfilMediaUserComponent implements OnInit {
 

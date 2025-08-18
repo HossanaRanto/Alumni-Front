@@ -1,17 +1,18 @@
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Component, OnDestroy } from '@angular/core';
-import { FormControl, FormControlName, FormGroup } from '@angular/forms';
+import { FormControl, FormControlName, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Observable, of, Subject, Subscription, tap } from 'rxjs';
 import {catchError, switchMap, takeUntil} from 'rxjs/operators'
 import { AuthService } from 'src/app/services/auth.service';
 import {ToastrService} from 'ngx-toastr'
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.css'],
-    standalone: false
+    standalone: true,
+    imports: [ReactiveFormsModule, RouterLink]
 })
 export class LoginComponent implements OnDestroy {
 

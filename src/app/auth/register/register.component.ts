@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormControlName, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { catchError, retry, Subject, takeUntil, tap } from 'rxjs';
@@ -12,7 +12,8 @@ import { birthDate, emailExist, onlyNumbersValidator, userExist } from '../Valid
     selector: 'app-register',
     templateUrl: './register.component.html',
     styleUrls: ['./register.component.css'],
-    standalone: false
+    standalone: true,
+    imports: [ReactiveFormsModule]
 })
 export class RegisterComponent implements OnInit,OnDestroy {
   constructor(private service:AuthService,private route:Router,private toaster:ToastrService){}

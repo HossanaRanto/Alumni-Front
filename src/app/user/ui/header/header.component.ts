@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBuilding, faHome, faListNumeric, faMessage, faSignOut, faUser } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -7,7 +8,8 @@ import { AuthService } from 'src/app/services/auth.service';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  standalone: true
+  standalone: true,
+  imports: [FontAwesomeModule, RouterLink]
 })
 export class HeaderComponent {
   faHome=faHome

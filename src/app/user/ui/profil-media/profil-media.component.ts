@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ExchangeDataService } from '../../services/exchange-data.service';
 import { UserService } from '../../services/user.service';
+import { SpinnerComponent } from 'src/app/ui/spinner/spinner.component';
 
 @Component({
     selector: 'app-profil-media',
     templateUrl: './profil-media.component.html',
     styleUrls: ['./profil-media.component.css'],
-    standalone: true
+    standalone: true,
+    imports: [SpinnerComponent]
 })
 export class ProfilMediaComponent implements OnInit{
   offset:number=0

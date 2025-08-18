@@ -3,12 +3,14 @@ import { ToastrService } from 'ngx-toastr';
 import { catchError, tap } from 'rxjs';
 import { UniversityView } from 'src/app/Models/Model';
 import { UniversityService } from '../../services/university.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-university-item',
   templateUrl: './university-item.component.html',
   styleUrls: ['./university-item.component.css'],
-  standalone: true
+  standalone: true,
+  imports: [RouterLink]
 })
 export class UniversityItemComponent {
   @Input() University!:UniversityView

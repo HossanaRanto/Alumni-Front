@@ -1,12 +1,10 @@
 import { DatePipe } from '@angular/common';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { catchError, tap } from 'rxjs';
 import { birthDate, onlyNumbersValidator } from 'src/app/auth/Validators/AuthValidators';
 import { User } from 'src/app/Models/Model';
-import { ProfilComponent } from '../../features/student/profil/profil.component';
 import { ExchangeDataService } from '../../services/exchange-data.service';
 import { UserService } from '../../services/user.service';
 import { emailExist, userExist } from '../../Validators/profil-validator';
@@ -15,7 +13,8 @@ import { emailExist, userExist } from '../../Validators/profil-validator';
   selector: 'app-profil-pers-info',
   templateUrl: './profil-pers-info.component.html',
   styleUrls: ['./profil-pers-info.component.css'],
-  standalone: true
+  standalone: true,
+  imports: [ReactiveFormsModule],
 })
 export class ProfilPersInfoComponent implements OnInit{
 

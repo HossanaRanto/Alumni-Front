@@ -1,16 +1,20 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { Observable } from 'rxjs';
-import { Post, PostView } from 'src/app/Models/Model';
+import { PostView } from 'src/app/Models/Model';
 // import { UserService } from 'src/app/user/services/post.service';
 import { PostService } from 'src/app/user/services/post.service';
+import { PostViewComponent } from 'src/app/user/ui/post-view/post-view.component';
+import { PostComponent } from '../../alumni/post/post.component';
+import { SpinnerComponent } from 'src/app/ui/spinner/spinner.component';
 
 
 @Component({
   selector: 'app-list-post',
   templateUrl: './list-post.component.html',
   styleUrls: ['./list-post.component.css'],
-  standalone: true
+  standalone: true,
+  imports: [FontAwesomeModule, PostViewComponent, PostComponent, SpinnerComponent]
 })
 export class ListPostComponent implements OnInit {
   faPlus=faPlus

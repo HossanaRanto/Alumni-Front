@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { University } from 'src/app/Models/Model';
 import { UserService } from '../../services/user.service';
+import { UniversityDetailsComponent } from '../university-details/university-details.component';
 
 @Component({
   selector: 'app-academic-career-user',
   templateUrl: './academic-career-user.component.html',
   styleUrls: ['./academic-career-user.component.css'],
-  standalone: true
+  standalone: true,
+  imports: [UniversityDetailsComponent]
 })
 export class AcademicCareerUserComponent {
   universities:{university:University}[]=[]

@@ -3,9 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url(
+/* @import url(
     "../node_modules/ngx-toastr/toastr.css"
-);
+); */
 
 /* @import url(
     "fontawesome/css/all.min.css"

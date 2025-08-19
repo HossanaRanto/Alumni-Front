@@ -30,7 +30,12 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "browser": "src/main.ts"
+            "browser": "src/main.ts",
+            "outputMode": "server",
+            "ssr": {
+              "entry": "src/main.server.ts"
+            },
+            "server": "src/main.server.ts"
           },
           "configurations": {
             "production": {

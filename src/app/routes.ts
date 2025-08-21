@@ -5,13 +5,19 @@ import { AdminGuard } from './guards/admin.guard';
 import { LoginGuard } from './guards/login.guard';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { TestComponent } from './test/test.component';
+import { USER_ROUTES } from './user/user.routes';
+import { ADMIN_ROUTES } from './admin/admin.routes';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [LoginGuard] },
   // TODO: Convert user and admin modules to standalone and update these routes
-  { path: '', loadChildren: () => import('./user/user.routes').then(m => m.USER_ROUTES), canMatch: [] },
-  { path: 'admin', loadChildren: () => import('./admin/admin.routes').then(m => m.ADMIN_ROUTES), canMatch: [AdminGuard] },
+  { path: '', loadComponent: () => import('./user/features/simple/main/main.component').then(m => m.MainComponent), canMatch: [], children: [
+    ...USER_ROUTES
+  ] },
+  { path: 'admin', loadComponent: () => import('./admin/features/dashboard/dashboard.component').then(m => m.DashboardComponent), canMatch: [AdminGuard], children: [
+    ...ADMIN_ROUTES
+  ] },
   { path: 'test', component: TestComponent },
   { path: '**', component: NotFoundComponent }
 ];

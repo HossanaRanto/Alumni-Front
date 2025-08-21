@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCamera, faSave } from '@fortawesome/free-solid-svg-icons';
@@ -19,6 +19,7 @@ export class CreateUniversityComponent {
   imageUrl?:string="assets/test.jpg"
   save=faSave
   imageFile:any=null
+  service = inject(UniversityService)
 
   data=new FormGroup({
     name:new FormControl('',{
@@ -28,7 +29,7 @@ export class CreateUniversityComponent {
     contact:new FormControl(''),
     email:new FormControl('',[Validators.email])
   })
-  constructor(private service:UniversityService,private auth:AuthService){
+  constructor(private auth:AuthService){
 
   }
   changeImage(event:any){

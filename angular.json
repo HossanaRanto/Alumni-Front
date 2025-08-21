@@ -16,11 +16,11 @@
             "outputPath": {
               "base": "dist/alumni"
             },
-            "index": "src/index.html",
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
+            "index": "src/index.html",
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -30,19 +30,15 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "browser": "src/main.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/main.server.ts"
-            },
-            "server": "src/main.server.ts"
+            "browser": "src/main.ts"
+            
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
+                  "maximumWarning": "1mb",
                   "maximumError": "1mb"
                 },
                 {

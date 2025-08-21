@@ -10,7 +10,6 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideAnimations(),
-    provideHttpClient(withInterceptorsFromDi()),
-    importProvidersFrom(FontAwesomeModule),
+    provideHttpClient(withInterceptorsFromDi())
   ]
 };

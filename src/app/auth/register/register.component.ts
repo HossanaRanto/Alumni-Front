@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, inject, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormControlName, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -16,7 +16,8 @@ import { birthDate, emailExist, onlyNumbersValidator, userExist } from '../Valid
     imports: [ReactiveFormsModule]
 })
 export class RegisterComponent implements OnInit,OnDestroy {
-  constructor(private service:AuthService,private route:Router,private toaster:ToastrService){}
+  service = inject(AuthService)
+  constructor(private route:Router,private toaster:ToastrService){}
   ngOnDestroy(): void {
 
   }

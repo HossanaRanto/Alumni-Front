@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http'
 import { BASE_URL } from './api';
 import { Authentication, TokenModel, User, UserSerializer } from '../Models/Model';
@@ -12,9 +13,11 @@ export class AuthService{
 
   ACCESS_TOKEN="access-token"
   REFRESH_TOKEN="refresh-token"
-  constructor(private request:HttpClient,private router:Router) {
-    
-  }
+  constructor(
+    private request: HttpClient,
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
   Login(data:Authentication):Observable<TokenModel> {
     const header=new HttpHeaders({
       'X-Skip-Interceptor':'true'
@@ -23,11 +26,12 @@ export class AuthService{
       headers:header
     })
   }
-  Logout(){
-    localStorage.removeItem(this.ACCESS_TOKEN)
-    localStorage.removeItem(this.REFRESH_TOKEN)
-
-    this.router.navigate(['/login'])    
+  Logout() {
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.removeItem(this.ACCESS_TOKEN);
+      localStorage.removeItem(this.REFRESH_TOKEN);
+    }
+    this.router.navigate(['/login']);
   }
 
   Register(data:any){
@@ -64,22 +68,32 @@ export class AuthService{
     return this.request.get<{role:string}>(BASE_URL+"user/role")
   }
 
-  SetToken(token:TokenModel){
-    localStorage.setItem(this.ACCESS_TOKEN,token.accessToken)
-    localStorage.setItem(this.REFRESH_TOKEN,token.refreshToken)
-    localStorage.setItem("user",JSON.stringify(token.user))
+  SetToken(token: TokenModel) {
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem(this.ACCESS_TOKEN, token.accessToken);
+      localStorage.setItem(this.REFRESH_TOKEN, token.refreshToken);
+      localStorage.setItem("user", JSON.stringify(token.user));
+    }
   }
-  getToken():TokenModel|null{
-    const token = localStorage.getItem("token")
-    if(token==null)return token
-
-    return JSON.parse(token)
+  getToken(): TokenModel | null {
+    if (isPlatformBrowser(this.platformId)) {
+      const token = localStorage.getItem("token");
+      if (token == null) return token;
+      return JSON.parse(token);
+    }
+    return null;
   }
-  GetAccessToken(){
-    return localStorage.getItem(this.ACCESS_TOKEN)||""
+  GetAccessToken() {
+    if (isPlatformBrowser(this.platformId)) {
+      return localStorage.getItem(this.ACCESS_TOKEN) || "";
+    }
+    return "";
   }
-  GetRefreshToken(){
-    return localStorage.getItem(this.REFRESH_TOKEN)||""
+  GetRefreshToken() {
+    if (isPlatformBrowser(this.platformId)) {
+      return localStorage.getItem(this.REFRESH_TOKEN) || "";
+    }
+    return "";
   }
   test(){
     return this.request.get<{message:string}>(BASE_URL+"user/test")

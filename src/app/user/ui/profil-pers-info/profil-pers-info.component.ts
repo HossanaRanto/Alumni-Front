@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, inject, Input, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { catchError, tap } from 'rxjs';
@@ -20,9 +20,9 @@ export class ProfilPersInfoComponent implements OnInit{
 
   user?:User
   isChangePassword:boolean=false
+  service = inject(UserService)
 
   constructor(
-    private service:UserService,
     private toastr:ToastrService,
     private exchange_service:ExchangeDataService,
     private date_pipe:DatePipe){}

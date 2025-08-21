@@ -15,31 +15,33 @@ import { CreateUniversityComponent } from './features/simple/create-university/c
 import { UniversityComponent } from './features/university/university.component';
 import { UniversityDetailComponent } from './ui/university-detail/university-detail.component';
 import { UniversityStudentsComponent } from './ui/university-students/university-students.component';
+import { MessageComponent } from '../chat/features/message/message.component';
+import { ChatComponent } from '../chat/features/chat/chat.component';
 
 export const USER_ROUTES: Routes = [
-  { path: '', component: MainComponent, children: [
-    { path: 'chat', loadChildren: () => import('../chat/chat.routes').then(m => m.CHAT_ROUTES) },
-    { path: 'profil', component: ProfilComponent, children: [
-      { path: '', redirectTo: 'personnalinfo', pathMatch: 'full' },
-      { path: 'personnalinfo', component: ProfilPersInfoComponent },
-      { path: 'academic_career', component: AcadmicCareerComponent },
-      { path: 'media', component: ProfilMediaComponent }
-    ] },
-    { path: 'user/:id', component: ProfilUserComponent, children: [
-      { path: '', redirectTo: 'personnalinfo', pathMatch: 'full' },
-      { path: 'personnalinfo', component: ProfilPersInfoUserComponent },
-      { path: 'academic_career', component: AcademicCareerUserComponent },
-      { path: 'media', component: ProfilMediaUserComponent }
-    ] },
-    { path: 'point', component: PointComponent },
-    { path: 'home', component: ListPostComponent },
-    { path: 'post', component: PostComponent },
-    { path: 'university-create', component: CreateUniversityComponent },
-    { path: 'university', component: UniversityComponent, children: [
-      { path: ':id', component: UniversityDetailComponent, children: [
-        { path: '', redirectTo: 'student', pathMatch: 'full' },
-        { path: ':state', component: UniversityStudentsComponent }
-      ] }
+  { path: 'chat', component: ChatComponent, children: [
+    { path: ':id', component: MessageComponent }
+  ] },
+  { path: 'profil', component: ProfilComponent, children: [
+    { path: '', redirectTo: 'personnalinfo', pathMatch: 'full' },
+    { path: 'personnalinfo', component: ProfilPersInfoComponent },
+    { path: 'academic_career', component: AcadmicCareerComponent },
+    { path: 'media', component: ProfilMediaComponent }
+  ] },
+  { path: 'user/:id', component: ProfilUserComponent, children: [
+    { path: '', redirectTo: 'personnalinfo', pathMatch: 'full' },
+    { path: 'personnalinfo', component: ProfilPersInfoUserComponent },
+    { path: 'academic_career', component: AcademicCareerUserComponent },
+    { path: 'media', component: ProfilMediaUserComponent }
+  ] },
+  { path: 'point', component: PointComponent },
+  { path: 'home', component: ListPostComponent },
+  { path: 'post', component: PostComponent },
+  { path: 'university-create', component: CreateUniversityComponent },
+  { path: 'university', component: UniversityComponent, children: [
+    { path: ':id', component: UniversityDetailComponent, children: [
+      { path: '', redirectTo: 'student', pathMatch: 'full' },
+      { path: ':state', component: UniversityStudentsComponent }
     ] }
   ] }
 ];

@@ -5,11 +5,10 @@ import { ListStudentComponent } from './features/list-student/list-student.compo
 import { ListComponent } from './ui/list/list.component';
 
 export const ADMIN_ROUTES: Routes = [
-  { path: '', component: DashboardComponent, children: [
-    { path: 'request', component: ListRequestComponent },
-    { path: 'list', component: ListStudentComponent, children: [
+  { path: 'request', component: ListRequestComponent },
+  { path: 'list', component: ListStudentComponent, children: [
       { path: '', redirectTo: 'student', pathMatch: 'full' },
       { path: ':state', component: ListComponent }
-    ] }
-  ] }
+    ] 
+  },
 ];

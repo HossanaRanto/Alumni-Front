@@ -2,7 +2,7 @@ import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Component, OnDestroy } from '@angular/core';
 import { FormControl, FormControlName, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Observable, of, Subject, Subscription, tap } from 'rxjs';
-import {catchError, switchMap, takeUntil} from 'rxjs/operators'
+import {catchError, switchMap, take, takeUntil} from 'rxjs/operators'
 import { AuthService } from 'src/app/services/auth.service';
 import {ToastrService} from 'ngx-toastr'
 import { Router, RouterLink } from '@angular/router';
@@ -27,32 +27,15 @@ export class LoginComponent implements OnDestroy {
 
     }
   ngOnDestroy(): void {
-    this.login$?.unsubscribe()
   }
-    
-    login$?:Subscription
-    error_handler?:Observable<HttpResponse<any>>
 
     logsubmit(event:Event){
       event.preventDefault()
-      // const data =JSON.stringify(this.formdata.value)
-      // fetch("https://localhost:5000/user/login",{
-      //   method:"POST",
-      //   headers:{
-      //     "Content-type":"application/json",
-      //     "Accept-type":"application/json"
-      //   },
-      //   body:data
-      // }).then(res=>res.json()).then(data=>console.log(data))
-
-      const cancel$=new Subject<{error:string}>()
-
-      cancel$.subscribe(error=>this.toastr.error(error.error,"Erreur"))
-      this.login$ = this.service.Login({Username:this.formdata.value.username,Password:this.formdata.value.password})
+      this.service.Login({Username:this.formdata.value.username,Password:this.formdata.value.password})
       .pipe(
-        takeUntil(cancel$),
+        take(1),
         catchError((error,res)=>{
-          cancel$.next(error.error)
+          this.toastr.show(error.error,"Error")
           return []
         }),
         tap(res=>{
@@ -66,11 +49,6 @@ export class LoginComponent implements OnDestroy {
         })
       )
       .subscribe()
-
-      // this.login.unsubscribe()
-      
-
-      // result.unsubscribe()
     }
     
 }

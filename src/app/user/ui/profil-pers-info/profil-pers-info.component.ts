@@ -15,6 +15,7 @@ import { emailExist, userExist } from '../../Validators/profil-validator';
   styleUrls: ['./profil-pers-info.component.css'],
   standalone: true,
   imports: [ReactiveFormsModule],
+  providers: [DatePipe]
 })
 export class ProfilPersInfoComponent implements OnInit{
 

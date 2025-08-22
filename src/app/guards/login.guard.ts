@@ -12,7 +12,7 @@ export class LoginGuard  {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     
-      const token=this.service.GetAccessToken()
+      const token = this.service.GetAccessToken()
       if(token==""){
         return true
       }
